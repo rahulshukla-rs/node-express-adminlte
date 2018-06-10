@@ -1,12 +1,9 @@
 const mongoose = require('mongoose')
 
 mongoose.Promise = global.Promise
-// mongoose.connect('mongodb://localhost:27017/express-adminlte').then(
-//     ()=> {console.log("Database Connected..")},
-//     err => {console.log("err",err)}
-// )
+const DB_URL = process.env.DB_URL || 'mongodb://admin:admin123@localhost:27017/node-express-adminlte';
 
-mongoose.connect('mongodb://admin:admin123@ds253960.mlab.com:53960/node-express-adminlte').then(
+mongoose.connect(DB_URL).then(
     ()=> {console.log("Database Connected..")},
     err => {console.log("err",err)}
 )
