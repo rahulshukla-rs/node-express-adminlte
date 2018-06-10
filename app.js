@@ -2,6 +2,8 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 
+const port = process.env.PORT || 3000;
+
 // Required Module Files
 var {mongoose} = require('./db/mongoose');
 
@@ -34,6 +36,6 @@ app.use(require('./routes'))
 
 
 // Start server
-app.listen(3000, () => {
-    console.log("Server Started at port 3000")
+app.listen(port, () => {
+    console.log(`Server Started at port ${port}`)
 })
